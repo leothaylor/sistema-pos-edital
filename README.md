@@ -54,4 +54,3 @@ A criação do repositório e o push só devem ocorrer depois da aprovação vis
 ## Evidências
 
 As capturas das sete seções, o fallback mobile e os relatórios Lighthouse estão em `evidence/`. O relatório técnico completo está em `RELATORIO_LANDING_POS_EDITAL_2026-08-15.md`.
-
