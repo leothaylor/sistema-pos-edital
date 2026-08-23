@@ -4,7 +4,6 @@ import {
   ArrowDown,
   ArrowRight,
   Brain,
-  CalendarDays,
   FileCheck2,
   Route,
   ScanSearch,
@@ -16,6 +15,7 @@ import neuralLogo from "../../public/logo-neural.webp";
 import { productConfig } from "../config/product";
 import { AttributionLink } from "./AttributionLink";
 import { LeadForm } from "./LeadForm";
+import interactionStyles from "./raio-x-interactions.module.css";
 import styles from "./raio-x.module.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://leothaylor.github.io/sistema-pos-edital/";
@@ -67,9 +67,9 @@ const diagnosticItems = [
     description: "O resultado gerado organiza datas, conteúdo, banca e prioridades para você revisar.",
   },
   {
-    icon: CalendarDays,
-    title: "Checklist de conferência",
-    description: "Os pontos que você deve validar no resultado antes de decidir seus próximos passos.",
+    icon: FileCheck2,
+    title: "Revisão do resultado",
+    description: "Orientações para conferir a saída da IA e validar os dados centrais antes dos próximos passos.",
   },
 ];
 
@@ -148,14 +148,14 @@ export default function RaioXPage() {
             <p className={styles.eyebrow}>O QUE CHEGA NO SEU E-MAIL</p>
             <h2 id="entrega-titulo">Tudo para gerar o seu próprio Raio X com IA.</h2>
             <p>
-              Em vez de uma análise pronta feita por nossa equipe, você recebe um prompt estruturado e
-              instruções claras para aplicar ao seu edital na ferramenta de IA que preferir.
+              Você recebe um prompt estruturado e instruções claras para transformar seu edital em um Raio X
+              inicial com IA — organizando datas, conteúdo, banca e prioridades em uma leitura prática para começar.
             </p>
           </div>
 
           <div className={styles.diagnosticGrid}>
             {diagnosticItems.map(({ icon: Icon, title, description }, index) => (
-              <article className={styles.diagnosticCard} key={title}>
+              <article className={`${styles.diagnosticCard} ${interactionStyles.diagnosticCardInteractive}`} key={title}>
                 <div>
                   <span>0{index + 1}</span>
                   <Icon aria-hidden="true" size={23} strokeWidth={1.55} />
@@ -185,7 +185,7 @@ export default function RaioXPage() {
             <ul>
               <li><FileCheck2 aria-hidden="true" size={18} /> Prompt pronto para copiar</li>
               <li><FileCheck2 aria-hidden="true" size={18} /> Instruções de uso com IA</li>
-              <li><FileCheck2 aria-hidden="true" size={18} /> Checklist para conferir o resultado</li>
+              <li><FileCheck2 aria-hidden="true" size={18} /> Orientações para revisar o resultado</li>
             </ul>
           </div>
           <LeadForm />
@@ -230,11 +230,11 @@ export default function RaioXPage() {
 
         <section aria-labelledby="final-titulo" className={styles.finalCta}>
           <div>
-            <p className={styles.eyebrow}>COMECE PELO SEU EDITAL</p>
+            <p className={styles.eyebrow}>RAIO X EXPRESS · 100% GRATUITO</p>
             <h2 id="final-titulo">Pegue o prompt. Gere seu Raio X. Comece com direção.</h2>
           </div>
           <a className={styles.finalButton} href="#receber">
-            RECEBER PROMPT + INSTRUÇÕES <ArrowRight aria-hidden="true" size={19} />
+            RECEBER O RAIO X EXPRESS GRÁTIS <ArrowRight aria-hidden="true" size={19} />
           </a>
         </section>
       </main>
