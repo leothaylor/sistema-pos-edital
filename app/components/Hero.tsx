@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="hero-principles hero-enter" aria-label="Princípios do sistema">
           <span><Circle aria-hidden="true" size={7} fill="currentColor" />Clareza</span>
           <span><Circle aria-hidden="true" size={7} fill="currentColor" />Sequência</span>
-          <span><Circle aria-hidden="true" size={7} fill="currentColor" />Direção operacional</span>
+          <span><Circle aria-hidden="true" size={7} fill="currentColor" />Direção nos estudos</span>
         </div>
       </div>
 
