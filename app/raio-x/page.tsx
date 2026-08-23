@@ -214,7 +214,7 @@ export default function RaioXPage() {
 
             <div className={styles.capabilityList}>
               {productCapabilities.map(([number, title, description]) => (
-                <div className={styles.capability} key={title}>
+                <div className={`${styles.capability} ${interactionStyles.capabilityInteractive}`} key={title}>
                   <span>{number}</span>
                   <p><strong>{title}</strong> — {description}.</p>
                 </div>
