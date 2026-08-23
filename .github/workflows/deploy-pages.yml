@@ -41,6 +41,7 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /sistema-pos-edital
           NEXT_PUBLIC_SITE_URL: https://leothaylor.github.io/sistema-pos-edital/
+          NEXT_PUBLIC_MAILERLITE_FORM_ACTION: ${{ vars.MAILERLITE_FORM_ACTION }}
 
       - name: Preparar artefato do Pages
         uses: actions/upload-pages-artifact@v3
