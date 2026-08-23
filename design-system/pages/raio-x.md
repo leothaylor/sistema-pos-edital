@@ -7,7 +7,7 @@ Landing de captura orgânica, não uma versão reduzida da landing longa.
 ## Pattern
 
 - Lead magnet + formulário com no máximo três campos.
-- Um CTA primário: receber o Raio X.
+- Um CTA primário: receber o prompt e as instruções para gerar o Raio X.
 - Cinco blocos: hero, entrega, formulário, ponte para produto, encerramento.
 - Comprimento alvo: 30–40% da landing longa.
 
@@ -25,6 +25,12 @@ Landing de captura orgânica, não uma versão reduzida da landing longa.
 - Nome e e-mail marcados como obrigatórios; WhatsApp explicitamente opcional.
 - Mensagem de erro/sucesso junto ao formulário com `aria-live`.
 - Consentimento curto e legível.
+
+## Copy Boundary
+
+- Nunca prometer uma análise pronta ou feita pela equipe.
+- Sempre nomear os dois entregáveis: prompt estruturado e instruções de uso.
+- Mostrar o mecanismo: anexar o edital à IA, colar o prompt, gerar e conferir o Raio X.
 
 ## Responsive
 

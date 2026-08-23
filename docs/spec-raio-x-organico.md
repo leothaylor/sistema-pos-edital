@@ -2,7 +2,7 @@
 
 ## Objective
 
-Criar uma segunda landing curta para visitantes que chegam interessados pelo Instagram após comentar `RAIO X`. A página deve capturar o contato, explicar como o candidato envia o edital e conduzir naturalmente ao Sistema Pós-Edital.
+Criar uma segunda landing curta para visitantes que chegam interessados pelo Instagram após comentar `RAIO X`. A página deve capturar o contato, entregar um prompt com instruções para o candidato gerar o próprio Raio X com IA e conduzir naturalmente ao Sistema Pós-Edital.
 
 A landing longa existente em `/` continua sendo o destino exclusivo de tráfego pago e não terá estrutura, copy, estilos ou comportamento alterados.
 
@@ -10,10 +10,11 @@ A landing longa existente em `/` continua sendo o destino exclusivo de tráfego 
 
 1. A nova URL pública será `/raio-x/`.
 2. Nome e e-mail serão obrigatórios; WhatsApp será opcional.
-3. O edital será solicitado nas instruções enviadas depois do cadastro; não haverá upload de arquivo nesta página.
-4. O MailerLite será conectado por um endpoint externo configurável, ainda não fornecido.
-5. Sem endpoint, o formulário deve impedir o envio e explicar que os cadastros ainda não estão abertos, sem descartar dados silenciosamente.
-6. O CTA do produto leva à landing longa enquanto o checkout estiver nulo e passa ao checkout quando a URL oficial for configurada.
+3. O material gratuito é um prompt estruturado com instruções de uso; não é uma análise pronta feita pela equipe.
+4. O candidato anexará o edital diretamente à ferramenta de IA que escolher; não haverá upload de arquivo nesta página.
+5. O MailerLite será conectado por um endpoint externo configurável, ainda não fornecido.
+6. Sem endpoint, o formulário deve impedir o envio e explicar que os cadastros ainda não estão abertos, sem descartar dados silenciosamente.
+7. O CTA do produto leva à landing longa enquanto o checkout estiver nulo e passa ao checkout quando a URL oficial for configurada.
 
 ## Tech Stack
 
@@ -91,7 +92,8 @@ app/raio-x/raio-x.module.css     # sistema visual isolado
 
 ## Success Criteria
 
-- `/raio-x/` contém hero, explicação do Raio X, formulário, ponte para o produto e encerramento.
+- `/raio-x/` contém hero, explicação do prompt, formulário, ponte para o produto e encerramento.
+- Toda promessa deixa explícito que o lead recebe o prompt e as instruções para gerar o próprio Raio X.
 - A altura total fica próxima de 30–40% da landing longa.
 - O formulário tem nome, e-mail obrigatório e WhatsApp opcional.
 - O produto é resumido em edital, conteúdo, banca, rotina e contingência.

@@ -14,7 +14,7 @@ export function LeadForm() {
     if (!leadCaptureConfig.actionUrl) {
       event.preventDefault();
       setStatus(
-        "Os cadastros ainda não estão abertos. Seus dados continuam preenchidos; volte em breve para receber o Raio X.",
+        "Os cadastros ainda não estão abertos. Seus dados continuam preenchidos; volte em breve para receber o prompt e as instruções.",
       );
       return;
     }
@@ -80,12 +80,13 @@ export function LeadForm() {
       </div>
 
       <button className={styles.formButton} type="submit">
-        <span>QUERO RECEBER O RAIO X</span>
+        <span>QUERO RECEBER O PROMPT</span>
         <ArrowRight aria-hidden="true" size={18} strokeWidth={1.8} />
       </button>
 
       <p className={styles.privacyNote}>
-        Ao enviar, você concorda em receber o Raio X e conteúdos sobre preparação pós-edital. Sem spam.
+        Ao enviar, você concorda em receber o prompt, as instruções de uso e conteúdos sobre preparação
+        pós-edital. Sem spam.
       </p>
 
       <p aria-live="polite" className={styles.formStatus} role="status">

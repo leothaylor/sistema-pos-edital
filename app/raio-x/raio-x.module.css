@@ -775,8 +775,8 @@
 
   .hero {
     min-height: auto;
-    padding-top: 116px;
-    padding-bottom: 76px;
+    padding-top: 106px;
+    padding-bottom: 66px;
     grid-template-columns: 1fr;
     gap: 58px;
   }
@@ -811,8 +811,8 @@
   .delivery,
   .capture,
   .product {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 45px;
+    padding-bottom: 45px;
   }
 
   .diagnosticGrid {
@@ -868,8 +868,8 @@
 
   .finalCta {
     min-height: 340px;
-    padding-top: 46px;
-    padding-bottom: 46px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     grid-template-columns: 1fr;
     gap: 40px;
   }
