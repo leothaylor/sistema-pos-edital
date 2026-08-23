@@ -44,3 +44,37 @@
 .diagnosticCardInteractive:active p {
   color: #f3d9db;
 }
+
+.capabilityInteractive {
+  position: relative;
+  z-index: 0;
+  transform-origin: left center;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    backdrop-filter 180ms ease;
+  -webkit-backdrop-filter: blur(0);
+  backdrop-filter: blur(0);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .capabilityInteractive:hover {
+    z-index: 2;
+    transform: translateX(5px) scale(1.012);
+    box-shadow:
+      0 12px 30px rgb(18 18 17 / 8%),
+      inset 0 0 0 1px rgb(255 255 255 / 28%);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+  }
+}
+
+.capabilityInteractive:active {
+  z-index: 2;
+  transform: translateX(3px) scale(1.008);
+  box-shadow:
+    0 8px 22px rgb(18 18 17 / 7%),
+    inset 0 0 0 1px rgb(255 255 255 / 24%);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
