@@ -79,7 +79,7 @@ export function MechanismSection() {
       </div>
 
       <div className="mechanism-note">
-        <p>Exemplo visual de estrutura. As saídas dependem do edital e dos materiais fornecidos; não representam garantia de resultado.</p>
+        <p>A organização se adapta ao edital e aos materiais fornecidos. As saídas apoiam decisões de estudo e não representam garantia de resultado.</p>
         <CheckoutButton location="mechanism" />
       </div>
     </section>

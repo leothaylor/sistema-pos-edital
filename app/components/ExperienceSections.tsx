@@ -38,7 +38,7 @@ export function ProductInteriorSection() {
   return (
     <section className="product-interior" id="produto" aria-labelledby="product-title">
       <SectionIntro
-        description="Esta é a estrutura da jornada entregue ao aluno — sem fabricar uma tela da Hotmart. O componente está pronto para receber capturas reais quando estiverem aprovadas."
+        description="Cada módulo orienta o que fazer, qual material usar e como avançar para a próxima decisão do seu pós-edital."
         eyebrow="POR DENTRO DO PRODUTO"
         index="06"
         title={<><span id="product-title">Uma área organizada</span><br /><em>pela próxima decisão.</em></>}
@@ -71,7 +71,7 @@ export function BonusesSection() {
       <SectionIntro
         eyebrow="BÔNUS"
         index="B"
-        title={<span id="bonuses-title">Recursos adicionais <em>quando confirmados na oferta.</em></span>}
+        title={<span id="bonuses-title">Recursos adicionais <em>para ampliar sua preparação.</em></span>}
       />
       <div className="bonus-grid">
         {productConfig.bonuses.map((bonus) => (

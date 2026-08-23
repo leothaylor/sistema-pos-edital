@@ -97,7 +97,7 @@ export default function CheckoutButton({
         role="status"
         aria-live="polite"
       >
-        Em breve — o acesso será liberado quando a oferta estiver confirmada.
+        As inscrições ainda não estão abertas. Volte em breve para acessar o sistema.
       </span>
     </span>
   );
