@@ -1,0 +1,46 @@
+.diagnosticCardInteractive {
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.diagnosticCardInteractive > div,
+.diagnosticCardInteractive > div span,
+.diagnosticCardInteractive h3,
+.diagnosticCardInteractive p {
+  transition: color 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .diagnosticCardInteractive:hover {
+    background: #a4111b;
+  }
+
+  .diagnosticCardInteractive:hover > div,
+  .diagnosticCardInteractive:hover h3 {
+    color: #fffdf8;
+  }
+
+  .diagnosticCardInteractive:hover > div span {
+    color: #f3c3c6;
+  }
+
+  .diagnosticCardInteractive:hover p {
+    color: #f3d9db;
+  }
+}
+
+.diagnosticCardInteractive:active {
+  background: #a4111b;
+}
+
+.diagnosticCardInteractive:active > div,
+.diagnosticCardInteractive:active h3 {
+  color: #fffdf8;
+}
+
+.diagnosticCardInteractive:active > div span {
+  color: #f3c3c6;
+}
+
+.diagnosticCardInteractive:active p {
+  color: #f3d9db;
+}
