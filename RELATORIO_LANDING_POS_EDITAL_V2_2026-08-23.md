@@ -8,6 +8,8 @@
 
 **Base auditada:** `8b870c6`
 
+**Commit de implementação:** `8ec95918b3f1a4c411f1af3ce4ee0526af245078`
+
 **URL pública:** https://leothaylor.github.io/sistema-pos-edital/
 
 ## 1. Resultado executivo
@@ -35,6 +37,8 @@ O defeito da URL pública também foi diagnosticado: o GitHub Pages estava em `b
 ![Hero mobile](evidence/v2/11-hero-mobile-390x844.png)
 
 Capturas adicionais estão em `evidence/v2/`, cobrindo problema, mecanismo, jornada, uso sem conhecimento de IA, produto, público, FAQ, oferta e CTA final.
+
+As capturas `12-public-mobile.png` e `13-public-desktop.png` foram obtidas diretamente da URL pública depois do deploy.
 
 ## 3. Estrutura comercial implementada
 
@@ -133,6 +137,7 @@ O ativo principal `public/neural-statue-v2.webp` tem 108.276 bytes. Um novo Open
 | `npm audit --omit=dev` | OK; 0 vulnerabilidades |
 | `git diff --check` | OK; sem whitespace inválido |
 | `gitleaks git --no-banner --redact .` | OK; três commits e ~7,14 MB auditados; nenhum segredo encontrado |
+| `gitleaks git --staged --no-banner --redact .` | OK; ~5,46 MB de mudanças preparadas auditadas; nenhum segredo encontrado |
 
 O build de produção foi executado com:
 
@@ -196,7 +201,31 @@ gh api --method PUT repos/leothaylor/sistema-pos-edital/pages -f build_type=work
 
 Verificação imediata: `build_type: workflow`. O workflow usa Node.js 22, executa `npm ci`, `npm run lint`, `npm run build`, envia `./out` com `upload-pages-artifact@v3` e publica com `deploy-pages@v4`.
 
-O identificador do workflow e a validação final da URL pública serão registrados no fechamento após o push.
+### Deploy concluído
+
+- Workflow: `32652983011`.
+- URL da execução: https://github.com/leothaylor/sistema-pos-edital/actions/runs/32652983011
+- Commit implantado: `8ec95918b3f1a4c411f1af3ce4ee0526af245078`.
+- Job `build`: sucesso em 43 s.
+- Job `deploy`: sucesso em 10 s.
+- Estado final da API do Pages: `status: built`, `build_type: workflow`.
+
+### Validação da URL pública
+
+Verificação feita em `https://leothaylor.github.io/sistema-pos-edital/?v=8ec9591` para evitar cache antigo:
+
+- title e H1 da landing V2 presentes;
+- README antigo ausente;
+- scripts e imagem neural carregados sob `/sistema-pos-edital/_next/`;
+- imagem principal carregada com largura natural válida;
+- ausência de preço antigo, garantia de sete dias e acesso vitalício;
+- largura de documento igual à viewport em mobile e desktop;
+- CTA com checkout nulo manteve a URL e exibiu o aviso;
+- sticky mobile apareceu após o hero;
+- cinco FAQs presentes e expansão/recolhimento funcional;
+- as dez seções comerciais estão presentes.
+
+O Actions exibiu uma anotação informativa de que algumas actions ainda declaram runtime Node 20 e foram forçadas pelo runner a Node 24. O workflow e os dois jobs concluíram com sucesso; a aplicação foi construída explicitamente com Node.js 22. Essa anotação não bloqueia a publicação, mas deve ser reavaliada quando versões novas das actions usadas estiverem disponíveis.
 
 ## 10. Ferramentas e estados verificados
 
