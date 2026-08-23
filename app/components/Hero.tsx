@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowDown, Circle } from "lucide-react";
-import statueImage from "../../public/neural-statue-v2.webp";
+import productCover from "../../public/capa-sistema-pos-edital.webp";
 import { productConfig } from "../config/product";
 import CheckoutButton from "./CheckoutButton";
 
@@ -33,17 +33,17 @@ export default function Hero() {
         <div className="statue-grid" aria-hidden="true" />
         <div className="statue-frame">
           <Image
-            alt="Estátua clássica parcialmente dissolvida em uma estrutura neural"
+            alt="Capa oficial do Sistema Pós-Edital"
             className="statue-image"
             fill
             priority
-            sizes="(max-width: 767px) 92vw, (max-width: 1199px) 48vw, 560px"
-            src={statueImage}
+            sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1199px) 48vw, 600px"
+            src={productCover}
           />
         </div>
         <figcaption>
-          <span>ESTRUTURA ANTES DA EXECUÇÃO</span>
-          <span>01 / DIREÇÃO</span>
+          <span>CAPA OFICIAL DO SISTEMA</span>
+          <span>01 / PÓS-EDITAL</span>
         </figcaption>
       </figure>
     </section>
