@@ -5,14 +5,13 @@ import {
   ArrowRight,
   Brain,
   CalendarDays,
-  Check,
   FileCheck2,
-  FileSearch,
   Route,
   ScanSearch,
   ShieldCheck,
 } from "lucide-react";
 import productCover from "../../public/capa-sistema-pos-edital.webp";
+import raioXCover from "../../public/capa-raio-x-expresso.webp";
 import neuralLogo from "../../public/logo-neural.webp";
 import { productConfig } from "../config/product";
 import { AttributionLink } from "./AttributionLink";
@@ -129,27 +128,17 @@ export default function RaioXPage() {
             </p>
           </div>
 
-          <div aria-label="Prévia do prompt e das instruções" className={styles.scanPanel} role="img">
+          <div className={styles.scanPanel}>
             <div className={styles.scanGrid} />
-            <div className={styles.documentCard}>
-              <div className={styles.documentTop}>
-                <span>PROMPT PRONTO</span>
-                <FileSearch aria-hidden="true" size={22} strokeWidth={1.5} />
-              </div>
-              <div className={styles.documentBody}>
-                <div className={styles.documentTitle}>
-                  <small>PROMPT_RAIO_X.TXT</small>
-                  <strong>COPIE E COLE</strong>
-                </div>
-                <div className={styles.scanLine}><span /><b>ANEXE O EDITAL</b></div>
-                <div className={styles.scanLine}><span /><b>COLE O PROMPT</b></div>
-                <div className={styles.scanLine}><span /><b>GERE O RAIO X</b></div>
-                <div className={styles.scanLine}><span /><b>CONFIRA</b></div>
-              </div>
-              <div className={styles.documentFooter}>
-                <span>INSTRUÇÕES INCLUÍDAS</span>
-                <Check aria-hidden="true" size={17} />
-              </div>
+            <div className={styles.raioCoverFrame}>
+              <Image
+                alt="Capa Raio X Expresso"
+                className={styles.raioCover}
+                fill
+                priority
+                sizes="(max-width: 767px) calc(100vw - 64px), 430px"
+                src={raioXCover}
+              />
             </div>
           </div>
         </section>

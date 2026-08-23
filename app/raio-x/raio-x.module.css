@@ -255,6 +255,22 @@
   box-shadow: 0 0 0 30px rgb(164 17 27 / 3%), 0 0 0 62px rgb(164 17 27 / 2%);
 }
 
+.raioCoverFrame {
+  width: min(100%, 430px);
+  aspect-ratio: 4 / 5;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background: var(--rx-surface);
+  border: 1px solid var(--rx-line);
+  box-shadow: -22px 32px 70px rgb(18 18 17 / 16%);
+  transform: rotate(1.5deg);
+}
+
+.raioCover {
+  object-fit: cover;
+}
+
 .documentCard {
   width: min(100%, 430px);
   position: relative;
