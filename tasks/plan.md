@@ -32,7 +32,7 @@ Adicionar uma rota estática, curta e isolada para captura orgânica, mantendo a
 ### Checkpoint: Complete
 
 - [x] Todos os critérios da spec atendidos.
-- [ ] Publicação e URL pública verificadas.
+- [x] Publicação e URL pública verificadas.
 
 ## Risks and Mitigations
 
