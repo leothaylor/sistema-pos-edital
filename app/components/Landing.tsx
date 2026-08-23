@@ -1,3 +1,5 @@
+import Image from "next/image";
+import neuralLogo from "../../public/logo-neural.webp";
 import { productConfig } from "../config/product";
 import CheckoutButton from "./CheckoutButton";
 import { AudienceSection, FaqSection, FinalCtaSection, OfferSection } from "./DecisionSections";
@@ -13,7 +15,7 @@ export default function Landing() {
       <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
       <header className="site-header">
         <a className="brand" href="#inicio">
-          <span className="brand-mark" aria-hidden="true">N</span>
+          <Image alt="" aria-hidden="true" className="brand-mark" height={34} priority src={neuralLogo} width={34} />
           <span><b>{productConfig.brandName}</b><small>{productConfig.productName}</small></span>
         </a>
         <CheckoutButton className="header-cta" label="ACESSAR O SISTEMA" location="header" />
@@ -34,7 +36,7 @@ export default function Landing() {
       </main>
 
       <footer className="site-footer">
-        <div><span className="brand-mark" aria-hidden="true">N</span><strong>{productConfig.brandName}</strong></div>
+        <div><Image alt="" aria-hidden="true" className="brand-mark" height={34} src={neuralLogo} width={34} /><strong>{productConfig.brandName}</strong></div>
         <p>{productConfig.productName} — organização e direção para o momento pós-edital.</p>
         <small>Este produto não promete aprovação e não substitui o estudo.</small>
       </footer>
