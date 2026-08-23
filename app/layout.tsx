@@ -4,21 +4,27 @@ import "./globals.css";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://leothaylor.github.io/sistema-pos-edital/";
 
 export const metadata: Metadata = {
-  title: "Sistema Pós-Edital — Estudo com direção",
-  description: "Transforme edital, banca e rotina em uma sequência clara para começar a estudar.",
+  title: "Sistema Pós-Edital | Organize seu estudo após o edital",
+  description: "Organize edital, conteúdo, banca e prioridades em uma sequência clara para começar sua preparação pós-edital com direção.",
   metadataBase: new URL(siteUrl),
+  alternates: { canonical: siteUrl },
+  applicationName: "Sistema Pós-Edital",
+  keywords: ["pós-edital", "concurso público", "organização de estudos", "edital", "banca examinadora"],
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "Sistema Pós-Edital — Estudo com direção",
-    description: "Pare de gastar seu tempo organizando o estudo.",
+    title: "Sistema Pós-Edital | Organize seu estudo após o edital",
+    description: "Pare de gastar seu tempo organizando o estudo. Transforme o pós-edital em uma sequência clara.",
     type: "website",
     locale: "pt_BR",
-    images: [{ url: "og.png", width: 1728, height: 909, alt: "Sistema Pós-Edital — Pare de gastar seu tempo organizando o estudo." }],
+    url: siteUrl,
+    siteName: "Neural Concursos",
+    images: [{ url: "og-v2.webp", width: 1200, height: 630, alt: "Sistema Pós-Edital — Pare de gastar seu tempo organizando o estudo." }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sistema Pós-Edital — Estudo com direção",
+    title: "Sistema Pós-Edital | Organize seu estudo após o edital",
     description: "Pare de gastar seu tempo organizando o estudo.",
-    images: ["og.png"],
+    images: ["og-v2.webp"],
   },
 };
 

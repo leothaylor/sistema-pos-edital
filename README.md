@@ -1,56 +1,53 @@
-# Sistema Pós-Edital — Landing page
+# Sistema Pós-Edital
 
-Landing page mobile-first do Sistema Pós-Edital, construída em Next.js, React, TypeScript e Tailwind CSS. O projeto gera arquivos estáticos para publicação futura no GitHub Pages.
+Landing page comercial mobile-first da Neural Concursos, construída com Next.js, React, TypeScript e Tailwind CSS e exportada de forma estática para o GitHub Pages.
 
-## Rodar localmente
+## Configuração comercial central
 
-Pré-requisitos: Node.js 22 e npm 10.
+Preço, checkout, garantia, condição de acesso e exibição dos bônus ficam somente em:
+
+`app/config/product.ts`
+
+Estado seguro inicial:
+
+```ts
+price: null,
+checkoutUrl: null,
+guaranteeDays: null,
+lifetimeAccess: null,
+showBonuses: false,
+```
+
+Com `checkoutUrl: null`, os CTAs permanecem clicáveis e mostram um aviso discreto de disponibilidade futura. Eles não apontam para `#`, não geram 404 e não abrem URL falsa. Ao inserir a URL real nessa configuração, todos os CTAs passam a usá-la automaticamente e preservam parâmetros UTM presentes na visita.
+
+Não preencha valores comerciais por estimativa. Use apenas informações confirmadas da oferta.
+
+## Desenvolvimento local
+
+Pré-requisitos validados no projeto: Node.js 22 e npm 10.
 
 ```powershell
-npm install
+npm ci
 npm run dev
 ```
 
-Abra `http://localhost:3000`.
-
-Para validar a exportação estática:
+Validação completa:
 
 ```powershell
-npm run build
-npx serve out
-```
-
-## Checkout Hotmart
-
-O checkout ainda não foi publicado. A única configuração fica no início de `app/components/Landing.tsx`:
-
-```ts
-// TROCAR AQUI quando o checkout da Hotmart estiver publicado.
-const CHECKOUT_URL: string | null = null;
-```
-
-Enquanto o valor for `null`, todos os CTAs mostram o aviso **Em breve** e não alteram a URL. Quando a Hotmart fornecer o link, substitua apenas `null` pela URL entre aspas.
-
-## Comportamento visual
-
-- Desktop: estátua autoral com dissolução neural integrada à própria imagem, inclinação sutil ao cursor e leve profundidade durante o scroll.
-- Mobile, `prefers-reduced-motion` ou fallback forçado: a mesma composição permanece estática.
-- Lenis, GSAP e o movimento de profundidade compartilham um único ticker no desktop. Não há canvas nem rede desenhada por cima da arte.
-
-O parâmetro `?no-webgl=1` continua disponível para forçar o modo estático em testes.
-
-## GitHub Pages
-
-O projeto usa `output: "export"`, `trailingSlash` e imagens sem otimização de servidor. Para uma futura publicação no repositório `sistema-pos-edital`, gere o build com:
-
-```powershell
+npm run lint
 $env:NEXT_PUBLIC_BASE_PATH = "/sistema-pos-edital"
 $env:NEXT_PUBLIC_SITE_URL = "https://leothaylor.github.io/sistema-pos-edital/"
 npm run build
 ```
 
-A criação do repositório e o push só devem ocorrer depois da aprovação visual local. O GitHub Pages deve permanecer desativado; a ativação em `main / root` é manual.
+O build estático é gerado em `out/`.
 
-## Evidências
+## Publicação
 
-As capturas das sete seções, o fallback mobile e os relatórios Lighthouse estão em `evidence/`. O relatório técnico completo está em `RELATORIO_LANDING_POS_EDITAL_2026-08-15.md`.
+O workflow `.github/workflows/deploy-pages.yml` valida lint, gera o export com o `basePath` correto e publica o diretório `out/` pelo GitHub Actions.
+
+O GitHub Pages deve usar a origem **GitHub Actions** (`build_type: workflow`), e não `main / root`. Publicar a raiz faz o Pages converter este README em um site técnico em vez de servir a landing.
+
+## Rastreamento preparado
+
+Os CTAs expõem `data-cta` por posição (`hero`, `mechanism`, `offer`, `final`, `sticky-mobile`) e disparam o evento de navegador `neural:cta`. Se um `dataLayer` for instalado futuramente, o mesmo clique envia `cta_click` sem exigir IDs inventados no código atual.

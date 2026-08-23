@@ -33,6 +33,9 @@ jobs:
       - name: Instalar dependências
         run: npm ci
 
+      - name: Validar qualidade do código
+        run: npm run lint
+
       - name: Gerar o site estático validado
         run: npm run build
         env:
