@@ -14,7 +14,7 @@ export function LeadForm() {
     if (!leadCaptureConfig.actionUrl) {
       event.preventDefault();
       setStatus(
-        "Os cadastros ainda não estão abertos. Seus dados continuam preenchidos; volte em breve para receber o prompt e as instruções.",
+        "Os cadastros ainda não estão abertos. Seus dados continuam preenchidos; volte em breve para receber o Raio X Express e as instruções.",
       );
       return;
     }
@@ -80,12 +80,12 @@ export function LeadForm() {
       </div>
 
       <button className={styles.formButton} type="submit">
-        <span>QUERO RECEBER O PROMPT</span>
+        <span>QUERO O RAIO X EXPRESS GRÁTIS</span>
         <ArrowRight aria-hidden="true" size={18} strokeWidth={1.8} />
       </button>
 
       <p className={styles.privacyNote}>
-        Ao enviar, você concorda em receber o prompt, as instruções de uso e conteúdos sobre preparação
+        Ao enviar, você concorda em receber o Raio X Express, as instruções de uso e conteúdos sobre preparação
         pós-edital. Sem spam.
       </p>
 
