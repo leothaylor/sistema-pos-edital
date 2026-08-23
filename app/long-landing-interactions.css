@@ -1,0 +1,269 @@
+/* Microinterações da landing principal.
+   Mantém a identidade visual existente e adiciona apenas feedback de hover/toque. */
+
+/* 02 — cadeia manual: o vermelho acompanha o item apontado. */
+.chain-item {
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.chain-item > span:first-child,
+.chain-item strong,
+.chain-item .chain-arrow {
+  transition: color 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .chain-item:hover {
+    z-index: 2;
+    background: var(--red);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, .22);
+  }
+
+  .chain-item:hover > span:first-child,
+  .chain-item:hover strong,
+  .chain-item:hover .chain-arrow {
+    color: var(--white);
+  }
+}
+
+.chain-item:active {
+  z-index: 2;
+  background: var(--red);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, .22);
+}
+
+.chain-item:active > span:first-child,
+.chain-item:active strong,
+.chain-item:active .chain-arrow {
+  color: var(--white);
+}
+
+/* 03 — entrada/saída: deslocamento mínimo + sensação de vidro, sem troca de paleta. */
+.input-card,
+.output-card {
+  position: relative;
+  transition: transform 200ms cubic-bezier(.22, 1, .36, 1), box-shadow 200ms ease, backdrop-filter 200ms ease;
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .input-card:hover,
+  .output-card:hover {
+    z-index: 2;
+    transform: translateY(-6px) scale(1.006);
+    box-shadow: 0 34px 82px rgba(18, 18, 17, .15);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+  }
+}
+
+.input-card:active,
+.output-card:active {
+  z-index: 2;
+  transform: translateY(-5px) scale(1.004);
+  box-shadow: 0 30px 72px rgba(18, 18, 17, .14);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
+/* 04 — jornada: o card apontado assume o vermelho da marca. */
+.journey-card {
+  position: relative;
+  transition: background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.journey-card-top,
+.journey-card h3,
+.journey-card > p,
+.journey-card > ul,
+.journey-card > ul li {
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .journey-card:hover {
+    z-index: 2;
+    background: var(--red);
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, .24);
+  }
+
+  .journey-card:hover .journey-card-top,
+  .journey-card:hover h3,
+  .journey-card:hover > p {
+    color: var(--white);
+  }
+
+  .journey-card:hover > ul {
+    border-top-color: rgba(255, 255, 255, .3);
+  }
+
+  .journey-card:hover > ul li {
+    color: var(--white);
+    background: rgba(255, 255, 255, .12);
+  }
+}
+
+.journey-card:active {
+  z-index: 2;
+  background: var(--red);
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, .24);
+}
+
+.journey-card:active .journey-card-top,
+.journey-card:active h3,
+.journey-card:active > p {
+  color: var(--white);
+}
+
+.journey-card:active > ul {
+  border-top-color: rgba(255, 255, 255, .3);
+}
+
+.journey-card:active > ul li {
+  color: var(--white);
+  background: rgba(255, 255, 255, .12);
+}
+
+/* 05 — passos simples: microdeslocamento + glass sem trocar a cor-base. */
+.simple-steps li {
+  position: relative;
+  transition: transform 190ms cubic-bezier(.22, 1, .36, 1), box-shadow 190ms ease, backdrop-filter 190ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .simple-steps li:hover {
+    z-index: 2;
+    transform: translateX(7px) scale(1.004);
+    box-shadow: 0 16px 38px rgba(18, 18, 17, .10);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+.simple-steps li:active {
+  z-index: 2;
+  transform: translateX(6px) scale(1.003);
+  box-shadow: 0 14px 34px rgba(18, 18, 17, .10);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* 06 — módulos: remove o vermelho fixo; ele passa a acompanhar mouse/toque. */
+.module-list li.is-active {
+  color: var(--ink);
+  background: transparent;
+  border-bottom-color: var(--line);
+}
+
+.module-list li.is-active small {
+  color: var(--muted);
+}
+
+.module-list li {
+  position: relative;
+  transition: color 180ms ease, background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.module-list li small,
+.module-list li svg {
+  transition: color 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .module-list li:hover {
+    z-index: 2;
+    color: var(--white);
+    background: var(--red);
+    border-bottom-color: var(--red);
+    transform: translateX(4px);
+    box-shadow: 0 12px 30px rgba(164, 17, 27, .18);
+  }
+
+  .module-list li:hover small,
+  .module-list li:hover svg {
+    color: #f9dfe0;
+  }
+}
+
+.module-list li:active {
+  z-index: 2;
+  color: var(--white);
+  background: var(--red);
+  border-bottom-color: var(--red);
+  transform: translateX(4px);
+  box-shadow: 0 12px 30px rgba(164, 17, 27, .18);
+}
+
+.module-list li:active small,
+.module-list li:active svg {
+  color: #f9dfe0;
+}
+
+/* 07 — para quem / não é: leve elevação + glass, preservando as cores. */
+.audience-grid article {
+  position: relative;
+  transition: transform 200ms cubic-bezier(.22, 1, .36, 1), box-shadow 200ms ease, backdrop-filter 200ms ease;
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .audience-grid article:hover {
+    z-index: 2;
+    transform: translateY(-6px) scale(1.006);
+    box-shadow: 0 28px 66px rgba(18, 18, 17, .15);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+  }
+}
+
+.audience-grid article:active {
+  z-index: 2;
+  transform: translateY(-5px) scale(1.004);
+  box-shadow: 0 24px 58px rgba(18, 18, 17, .14);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
+/* 08 — FAQ: microdeslocamento + vidro, sem alterar a cor principal. */
+.faq details {
+  position: relative;
+  transition: transform 190ms cubic-bezier(.22, 1, .36, 1), box-shadow 190ms ease, backdrop-filter 190ms ease, background-color 190ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .faq details:hover {
+    z-index: 2;
+    transform: translateX(6px) scale(1.003);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, .18);
+    background: rgba(255, 255, 255, .025);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+.faq details:active {
+  z-index: 2;
+  transform: translateX(5px) scale(1.002);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .17);
+  background: rgba(255, 255, 255, .025);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chain-item,
+  .input-card,
+  .output-card,
+  .journey-card,
+  .simple-steps li,
+  .module-list li,
+  .audience-grid article,
+  .faq details {
+    transition-duration: .01ms !important;
+    transform: none !important;
+  }
+}
