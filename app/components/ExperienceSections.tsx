@@ -71,7 +71,7 @@ export function BonusesSection() {
       <SectionIntro
         eyebrow="BÔNUS"
         index="B"
-        title={<span id="bonuses-title">Recursos <em>bônus.</em></span>}
+        title={<span id="bonuses-title">Recursos <em>bônus</em></span>}
       />
       <div className="bonus-grid">
         {productConfig.bonuses.map((bonus) => (
