@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "Neural Concursos",
     images: [
       {
-        url: "og-v2.webp",
+        url: "og-raio-x.webp",
         width: 1200,
         height: 630,
         alt: "Prompt Raio X do Edital — Neural Concursos",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Prompt gratuito para gerar o Raio X do seu edital",
     description: "Prompt pronto e instruções para analisar seu próprio edital com IA.",
-    images: ["og-v2.webp"],
+    images: ["og-raio-x.webp"],
   },
 };
 
