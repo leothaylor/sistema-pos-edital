@@ -2,7 +2,8 @@
 
 import { FormEvent, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { attributionKeys, leadCaptureConfig } from "./config";
+import { addAttributionToUrl } from "../config/tracking";
+import { leadCaptureConfig } from "./config";
 import styles from "./raio-x.module.css";
 
 export function LeadForm() {
@@ -19,15 +20,7 @@ export function LeadForm() {
       return;
     }
 
-    const action = new URL(leadCaptureConfig.actionUrl);
-    const currentParams = new URLSearchParams(window.location.search);
-
-    attributionKeys.forEach((key) => {
-      const value = currentParams.get(key);
-      if (value) action.searchParams.set(key, value);
-    });
-
-    form.action = action.toString();
+    form.action = addAttributionToUrl(leadCaptureConfig.actionUrl, window.location.href);
   }
 
   return (

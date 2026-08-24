@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { formatProductPrice, productConfig } from "../config/product";
+import { addAttributionToUrl, sendCheckoutClick } from "../config/tracking";
 
 type CtaLocation = "header" | "hero" | "mechanism" | "offer" | "final" | "sticky-mobile";
 
@@ -13,18 +14,8 @@ type CheckoutButtonProps = {
   includePrice?: boolean;
 };
 
-const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"] as const;
-
 function checkoutUrlWithAttribution(checkoutUrl: string) {
-  const destination = new URL(checkoutUrl, window.location.href);
-  const source = new URLSearchParams(window.location.search);
-
-  utmKeys.forEach((key) => {
-    const value = source.get(key);
-    if (value && !destination.searchParams.has(key)) destination.searchParams.set(key, value);
-  });
-
-  return destination.toString();
+  return addAttributionToUrl(checkoutUrl, window.location.href);
 }
 
 function trackCta(location: CtaLocation, status: "ready" | "coming-soon") {
@@ -38,6 +29,11 @@ function trackCta(location: CtaLocation, status: "ready" | "coming-soon") {
   window.dispatchEvent(new CustomEvent("neural:cta", { detail: event }));
   const dataLayerWindow = window as Window & { dataLayer?: Array<Record<string, unknown>> };
   dataLayerWindow.dataLayer?.push(event);
+  sendCheckoutClick({
+    cta_location: location,
+    product: productConfig.productName,
+    checkout_status: status,
+  });
 }
 
 export default function CheckoutButton({

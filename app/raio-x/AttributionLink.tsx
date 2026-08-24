@@ -1,7 +1,8 @@
 "use client";
 
 import type { ComponentPropsWithoutRef, MouseEvent } from "react";
-import { attributionKeys } from "./config";
+import { productConfig } from "../config/product";
+import { addAttributionToUrl, sendCheckoutClick } from "../config/tracking";
 
 type AttributionLinkProps = ComponentPropsWithoutRef<"a"> & {
   href: string;
@@ -12,15 +13,12 @@ export function AttributionLink({ href, onClick, ...props }: AttributionLinkProp
     onClick?.(event);
     if (event.defaultPrevented) return;
 
-    const currentParams = new URLSearchParams(window.location.search);
-    const target = new URL(href, window.location.href);
-
-    attributionKeys.forEach((key) => {
-      const value = currentParams.get(key);
-      if (value) target.searchParams.set(key, value);
+    event.currentTarget.href = addAttributionToUrl(href, window.location.href);
+    sendCheckoutClick({
+      cta_location: "raio-x-product",
+      product: productConfig.productName,
+      checkout_status: productConfig.checkoutUrl ? "ready" : "coming-soon",
     });
-
-    event.currentTarget.href = target.toString();
   }
 
   return <a href={href} onClick={handleClick} {...props} />;
