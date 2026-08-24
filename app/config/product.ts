@@ -20,20 +20,20 @@ export type ProductConfig = {
 export const productConfig: ProductConfig = {
   productName: "Sistema Pós-Edital",
   brandName: "Neural Concursos",
-  price: null,
+  price: 57,
   checkoutUrl: "https://pay.hotmart.com/J107137200W",
-  guaranteeDays: null,
-  lifetimeAccess: null,
-  showBonuses: false,
+  guaranteeDays: 7,
+  lifetimeAccess: true,
+  showBonuses: true,
   showStickyMobileCta: true,
   bonuses: [
     {
       title: "Painel Neural Concursos IA",
-      description: "Aplicativo de apoio à organização da preparação, com versões para Windows e Android.",
+      description: "Aplicativo de apoio à organização da preparação, com versões para Windows e Android. Disponível na área de membros a partir do 8º dia após a compra.",
     },
     {
-      title: "Professor Zoeiro",
-      description: "Ferramenta de apoio à resolução e compreensão de questões.",
+      title: "Professor Zoeiro Destrinchador de Questões",
+      description: "Ferramenta de IA para apoiar a resolução, compreensão e análise de questões. Disponível na área de membros a partir do 8º dia após a compra.",
     },
   ],
 };
