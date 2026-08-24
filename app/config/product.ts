@@ -21,7 +21,7 @@ export const productConfig: ProductConfig = {
   productName: "Sistema Pós-Edital",
   brandName: "Neural Concursos",
   price: null,
-  checkoutUrl: null,
+  checkoutUrl: "https://pay.hotmart.com/J107137200W",
   guaranteeDays: null,
   lifetimeAccess: null,
   showBonuses: false,
