@@ -18,7 +18,11 @@ function checkoutUrlWithAttribution(checkoutUrl: string) {
   return addAttributionToUrl(checkoutUrl, window.location.href);
 }
 
-function trackCta(location: CtaLocation, status: "ready" | "coming-soon") {
+function trackCta(
+  location: CtaLocation,
+  status: "ready" | "coming-soon",
+  onComplete?: () => void,
+) {
   const event = {
     event: "cta_click",
     cta_location: location,
@@ -33,7 +37,7 @@ function trackCta(location: CtaLocation, status: "ready" | "coming-soon") {
     cta_location: location,
     product: productConfig.productName,
     checkout_status: status,
-  });
+  }, onComplete);
 }
 
 export default function CheckoutButton({
@@ -60,8 +64,8 @@ export default function CheckoutButton({
         href={productConfig.checkoutUrl}
         onClick={(event) => {
           event.preventDefault();
-          trackCta(location, "ready");
-          window.location.assign(checkoutUrlWithAttribution(productConfig.checkoutUrl as string));
+          const destination = checkoutUrlWithAttribution(productConfig.checkoutUrl as string);
+          trackCta(location, "ready", () => window.location.assign(destination));
         }}
       >
         <span>{visibleLabel}</span>

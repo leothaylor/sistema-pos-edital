@@ -36,21 +36,27 @@ export type CheckoutClickParameters = {
   checkout_status: "ready" | "coming-soon";
 };
 
-export function sendCheckoutClick(parameters: CheckoutClickParameters) {
+export function sendCheckoutClick(
+  parameters: CheckoutClickParameters,
+  onComplete?: () => void,
+) {
   if (typeof window === "undefined") return;
 
-  const eventParameters = {
-    ...parameters,
-    transport_type: "beacon",
-  };
+  const eventParameters = { ...parameters };
 
   if (window.gtag) {
     window.gtag("event", "checkout_click", eventParameters);
-    return;
-  }
 
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push(["event", "checkout_click", eventParameters]);
+    if (onComplete) {
+      // GA4 batches custom events. Pagehide flushes the batch before leaving for checkout.
+      window.dispatchEvent(new PageTransitionEvent("pagehide", { persisted: false }));
+      window.setTimeout(onComplete, 100);
+    }
+  } else {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(["event", "checkout_click", eventParameters]);
+    onComplete?.();
+  }
 }
 
 declare global {

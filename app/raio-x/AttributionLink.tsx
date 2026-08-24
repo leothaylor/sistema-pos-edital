@@ -13,12 +13,13 @@ export function AttributionLink({ href, onClick, ...props }: AttributionLinkProp
     onClick?.(event);
     if (event.defaultPrevented) return;
 
-    event.currentTarget.href = addAttributionToUrl(href, window.location.href);
+    event.preventDefault();
+    const destination = addAttributionToUrl(href, window.location.href);
     sendCheckoutClick({
       cta_location: "raio-x-product",
       product: productConfig.productName,
       checkout_status: productConfig.checkoutUrl ? "ready" : "coming-soon",
-    });
+    }, () => window.location.assign(destination));
   }
 
   return <a href={href} onClick={handleClick} {...props} />;
