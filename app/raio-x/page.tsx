@@ -221,7 +221,7 @@ export default function RaioXPage() {
               ))}
             </div>
 
-            <AttributionLink className={styles.productCta} href="../#oferta">
+            <AttributionLink className={styles.productCta} href={productConfig.checkoutUrl ?? "../#oferta"}>
               <span>CONHECER O SISTEMA PÓS-EDITAL</span>
               <ArrowRight aria-hidden="true" size={18} />
             </AttributionLink>
