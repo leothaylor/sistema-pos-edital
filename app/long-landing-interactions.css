@@ -245,6 +245,48 @@
   color: #f9dfe0;
 }
 
+/* B — bônus: o card apontado assume o vermelho da marca. */
+.bonus-grid article {
+  position: relative;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.bonus-grid article > span,
+.bonus-grid article h3,
+.bonus-grid article p {
+  transition: color 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .bonus-grid article:hover {
+    z-index: 2;
+    background: var(--red);
+    border-color: var(--red);
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, .24);
+  }
+
+  .bonus-grid article:hover > span,
+  .bonus-grid article:hover h3,
+  .bonus-grid article:hover p {
+    color: var(--white);
+  }
+}
+
+.bonus-grid article:active {
+  z-index: 2;
+  background: var(--red);
+  border-color: var(--red);
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, .24);
+}
+
+.bonus-grid article:active > span,
+.bonus-grid article:active h3,
+.bonus-grid article:active p {
+  color: var(--white);
+}
+
 /* 07 — para quem / não é: leve elevação + glass, preservando as cores. */
 .audience-grid article {
   position: relative;
@@ -304,6 +346,7 @@
   .conditional-routes article,
   .simple-steps li,
   .module-list li,
+  .bonus-grid article,
   .audience-grid article,
   .faq details {
     transition-duration: .01ms !important;
