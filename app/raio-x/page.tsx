@@ -22,13 +22,13 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://leothaylor.github.i
 const pageUrl = new URL("raio-x/", siteUrl).toString();
 
 export const metadata: Metadata = {
-  title: "Prompt Raio X do Edital Gratuito | Neural Concursos",
+  title: "Comando Raio X do Edital Gratuito | Neural Concursos",
   description:
-    "Receba um prompt gratuito com instruções para usar a IA e gerar o Raio X do seu próprio edital.",
+    "Receba um comando gratuito com instruções para usar a IA e gerar o Raio X do seu próprio edital.",
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: "Prompt gratuito para gerar o Raio X do seu edital",
-    description: "Receba o prompt e o passo a passo para analisar seu edital com IA.",
+    title: "Comando gratuito para gerar o Raio X do seu edital",
+    description: "Receba o comando e o passo a passo para analisar seu edital com IA.",
     type: "website",
     locale: "pt_BR",
     url: pageUrl,
@@ -38,14 +38,14 @@ export const metadata: Metadata = {
         url: "og-raio-x.webp",
         width: 1200,
         height: 630,
-        alt: "Prompt Raio X do Edital — Neural Concursos",
+        alt: "Comando Raio X do Edital — Neural Concursos",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prompt gratuito para gerar o Raio X do seu edital",
-    description: "Prompt pronto e instruções para analisar seu próprio edital com IA.",
+    title: "Comando gratuito para gerar o Raio X do seu edital",
+    description: "Comando pronto e instruções para analisar seu próprio edital com IA.",
     images: ["og-raio-x.webp"],
   },
 };
@@ -53,13 +53,13 @@ export const metadata: Metadata = {
 const diagnosticItems = [
   {
     icon: Brain,
-    title: "Prompt estruturado",
+    title: "Comando estruturado",
     description: "Um comando pronto para orientar a IA na leitura do seu edital.",
   },
   {
     icon: Route,
     title: "Passo a passo de uso",
-    description: "Instruções para anexar o edital, colar o prompt e conduzir a conversa com a IA.",
+    description: "Instruções para anexar o edital, colar o comando e conduzir a conversa com a IA.",
   },
   {
     icon: ScanSearch,
@@ -89,7 +89,7 @@ export default function RaioXPage() {
       </a>
 
       <header className={styles.header}>
-        <a aria-label="Neural Concursos — início do prompt Raio X" className={styles.brand} href="#inicio">
+        <a aria-label="Neural Concursos — início do comando Raio X" className={styles.brand} href="#inicio">
           <Image
             alt=""
             className={styles.logo}
@@ -100,31 +100,31 @@ export default function RaioXPage() {
           />
           <span>
             <strong>Neural Concursos</strong>
-            <small>Prompt Raio X</small>
+            <small>Comando Raio X</small>
           </span>
         </a>
         <a className={styles.headerCta} href="#receber">
-          RECEBER O PROMPT <ArrowRight aria-hidden="true" size={16} />
+          RECEBER O COMANDO <ArrowRight aria-hidden="true" size={16} />
         </a>
       </header>
 
       <main id="conteudo">
         <section className={styles.hero} id="inicio">
           <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>PROMPT GRATUITO · RAIO X DO EDITAL</p>
+            <p className={styles.eyebrow}>COMANDO GRATUITO · RAIO X DO EDITAL</p>
             <h1>
               Seu edital saiu. Use a IA para descobrir o que merece atenção <em>primeiro.</em>
             </h1>
             <p className={styles.heroLede}>
-              Receba um prompt pronto e as instruções de uso. Você anexa seu edital à IA, cola o comando e
+              Receba um comando pronto e as instruções de uso. Você anexa seu edital à IA, cola o comando e
               gera o seu próprio Raio X inicial.
             </p>
             <a className={styles.primaryCta} href="#receber">
-              <span>RECEBER O PROMPT GRATUITO</span>
+              <span>RECEBER O COMANDO GRATUITO</span>
               <ArrowDown aria-hidden="true" size={18} strokeWidth={1.8} />
             </a>
             <p className={styles.microcopy}>
-              <ShieldCheck aria-hidden="true" size={15} /> Prompt + passo a passo · você aplica no seu edital
+              <ShieldCheck aria-hidden="true" size={15} /> Comando + passo a passo · você aplica no seu edital
             </p>
           </div>
 
@@ -168,7 +168,7 @@ export default function RaioXPage() {
           <div className={styles.steps}>
             <div><b>01</b><span>Você faz o cadastro.</span></div>
             <ArrowRight aria-hidden="true" size={18} />
-            <div><b>02</b><span>Recebe o prompt e as instruções por e-mail.</span></div>
+            <div><b>02</b><span>Recebe o comando e as instruções por e-mail.</span></div>
             <ArrowRight aria-hidden="true" size={18} />
             <div><b>03</b><span>Anexa o edital à IA e gera o próprio Raio X.</span></div>
           </div>
@@ -177,12 +177,12 @@ export default function RaioXPage() {
         <section aria-labelledby="form-titulo" className={styles.capture} id="receber">
           <div className={styles.captureCopy}>
             <p className={styles.eyebrow}>PRONTO PARA COPIAR E USAR</p>
-            <h2 id="form-titulo">Receba o prompt e o passo a passo.</h2>
+            <h2 id="form-titulo">Receba o comando e o passo a passo.</h2>
             <p>
-              Preencha os campos. Depois, é só seguir as instruções, anexar o edital à IA e colar o prompt.
+              Preencha os campos. Depois, é só seguir as instruções, anexar o edital à IA e colar o comando.
             </p>
             <ul>
-              <li><FileCheck2 aria-hidden="true" size={18} /> Prompt pronto para copiar</li>
+              <li><FileCheck2 aria-hidden="true" size={18} /> Comando pronto para copiar</li>
               <li><FileCheck2 aria-hidden="true" size={18} /> Instruções de uso com IA</li>
               <li><FileCheck2 aria-hidden="true" size={18} /> Orientações para revisar o resultado</li>
             </ul>
@@ -207,7 +207,7 @@ export default function RaioXPage() {
             <p className={styles.eyebrow}>DEPOIS DE GERAR O RAIO X</p>
             <h2 id="produto-titulo">Você viu o diagnóstico. E agora?</h2>
             <p className={styles.productLede}>
-              O prompt ajuda você a enxergar o edital. O <strong>{productConfig.productName}</strong> transforma
+              O comando ajuda você a enxergar o edital. O <strong>{productConfig.productName}</strong> transforma
               essa leitura em um sistema para conduzir sua preparação até a prova.
             </p>
 
@@ -230,7 +230,7 @@ export default function RaioXPage() {
         <section aria-labelledby="final-titulo" className={styles.finalCta}>
           <div>
             <p className={styles.eyebrow}>RAIO X EXPRESS · 100% GRATUITO</p>
-            <h2 id="final-titulo">Pegue o prompt. Gere seu Raio X. Comece com direção.</h2>
+            <h2 id="final-titulo">Pegue o comando. Gere seu Raio X. Comece com direção.</h2>
           </div>
           <a className={styles.finalButton} href="#receber">
             RECEBER O RAIO X EXPRESS GRÁTIS <ArrowRight aria-hidden="true" size={19} />
@@ -240,7 +240,7 @@ export default function RaioXPage() {
 
       <footer className={styles.footer}>
         <span>© 2026 {productConfig.brandName}</span>
-        <span>Prompt Raio X · Sistema Pós-Edital</span>
+        <span>Comando Raio X · Sistema Pós-Edital</span>
       </footer>
     </div>
   );
