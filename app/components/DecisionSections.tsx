@@ -6,12 +6,12 @@ import SectionIntro from "./SectionIntro";
 
 const faqItems = [
   {
-    question: "É só um pacote de prompts?",
+    question: "É só um pacote de comandos?",
     answer: "Não. Os comandos são a tecnologia por trás das etapas. O valor está na sequência organizada de uso: o que inserir, o que observar no resultado e para onde avançar.",
   },
   {
     question: "Preciso entender de inteligência artificial?",
-    answer: "Não. O sistema foi organizado para que você siga instruções claras em cada etapa, sem precisar estudar prompt engineering ou criar comandos do zero.",
+    answer: "Não. O sistema foi organizado para que você siga instruções claras em cada etapa, sem precisar aprender a criar comandos para IA do zero.",
   },
   {
     question: "Funciona para qualquer concurso?",
