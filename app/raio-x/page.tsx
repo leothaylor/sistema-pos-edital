@@ -148,8 +148,7 @@ export default function RaioXPage() {
             <p className={styles.eyebrow}>O QUE CHEGA NO SEU E-MAIL</p>
             <h2 id="entrega-titulo">Tudo para gerar o seu próprio Raio X com IA.</h2>
             <p>
-              Você recebe um prompt estruturado e instruções claras para transformar seu edital em um Raio X
-              inicial com IA — organizando datas, conteúdo, banca e prioridades em uma leitura prática para começar.
+              Receba o comando pronto, siga o passo a passo do vídeo e gere seu Raio X em poucos minutos.
             </p>
           </div>
 
