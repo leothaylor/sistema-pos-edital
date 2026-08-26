@@ -14,7 +14,7 @@ export function SimpleUseSection() {
 
       <div className="simple-use-layout">
         <div className="simple-use-copy">
-          <p>Você não precisa estudar prompt engineering, inventar comandos ou decidir sozinho qual ferramenta usar primeiro.</p>
+          <p>Você não precisa aprender a criar comandos para IA, inventar instruções do zero ou decidir sozinho qual ferramenta usar primeiro.</p>
           <div className="plain-language-note">
             <Sparkles aria-hidden="true" size={22} strokeWidth={1.5} />
             <p>As instruções já estão organizadas dentro de cada etapa. Você entra com o material, usa o resultado e avança.</p>
