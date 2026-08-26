@@ -207,7 +207,7 @@ export default function RaioXPage() {
             <p className={styles.eyebrow}>DEPOIS DE GERAR O RAIO X</p>
             <h2 id="produto-titulo">Você viu o diagnóstico. E agora?</h2>
             <p className={styles.productLede}>
-              O comando ajuda você a enxergar o edital. O <strong>{productConfig.productName}</strong> transforma
+              O Raio X ajuda você a enxergar o edital. O <strong>{productConfig.productName}</strong> transforma
               essa leitura em um sistema para conduzir sua preparação até a prova.
             </p>
 
