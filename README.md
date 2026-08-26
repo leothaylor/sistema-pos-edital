@@ -35,8 +35,7 @@ Validação completa:
 
 ```powershell
 npm run lint
-$env:NEXT_PUBLIC_BASE_PATH = "/sistema-pos-edital"
-$env:NEXT_PUBLIC_SITE_URL = "https://leothaylor.github.io/sistema-pos-edital/"
+$env:NEXT_PUBLIC_SITE_URL = "https://neuralconcursos.com.br/"
 npm run build
 ```
 
@@ -44,7 +43,13 @@ O build estático é gerado em `out/`.
 
 ## Publicação
 
-O workflow `.github/workflows/deploy-pages.yml` valida lint, gera o export com o `basePath` correto e publica o diretório `out/` pelo GitHub Actions.
+O workflow `.github/workflows/deploy-pages.yml` valida lint, gera o export para a origem `https://neuralconcursos.com.br/` e publica o diretório `out/` pelo GitHub Actions.
+
+Arquitetura pública:
+
+- `/` — página temporária da marca Neural Concursos;
+- `/sistema-pos-edital/` — landing do produto;
+- `/raio-x-express/` — landing da isca.
 
 O GitHub Pages deve usar a origem **GitHub Actions** (`build_type: workflow`), e não `main / root`. Publicar a raiz faz o Pages converter este README em um site técnico em vez de servir a landing.
 

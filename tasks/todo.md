@@ -1,53 +1,72 @@
-# Tasks: Landing orgânica Raio X
+# Checklist — Migração do domínio Neural Concursos
 
-## Task 1: Formulário de captura seguro
+Estados: `[x]` concluído e comprovado · `[ ]` ainda não concluído.
 
-**Acceptance criteria:**
-- [x] Nome e e-mail obrigatórios; WhatsApp opcional.
-- [x] Endpoint e nomes de campo centralizados.
-- [x] Endpoint nulo preserva dados e informa indisponibilidade.
+## 1. Baseline
 
-**Verification:** lint, build e envio manual com endpoint nulo.
+- [x] Confirmar repositório, `main`, remoto e commit inicial.
+- [x] Confirmar árvore limpa.
+- [x] Auditar `next.config.ts`, workflow, rotas, metadata, sitemap, robots, tracking, links e assets.
+- [x] Auditar GitHub Pages: sem custom domain; HTTPS atual do GitHub.io ativo.
+- [x] Auditar DNS: Registro.br, sem A/AAAA/`www`; preservar MX nulo e SPF `-all`.
+- [x] Testar URLs atuais e registrar canonicals GitHub.io.
 
-**Dependencies:** None.
+## 2. Arquitetura e código
 
-**Files:** `app/raio-x/config.ts`, `app/raio-x/LeadForm.tsx`.
+- [x] Criar origem/rotas oficiais centralizadas.
+- [x] Criar raiz temporária mínima da Neural Concursos.
+- [x] Publicar landing existente em `/sistema-pos-edital/` sem alterar visual/copy.
+- [x] Publicar Raio X existente em `/raio-x-express/` sem alterar visual/copy.
+- [x] Criar compatibilidade estática `/raio-x/` → `/raio-x-express/`, preservando query/hash.
+- [x] Separar metadata institucional, produto e Raio X.
+- [x] Atualizar canonicals, OG/Twitter, robots e sitemap.
+- [x] Remover `basePath` técnico e mudar a origem do workflow.
+- [x] Confirmar GA4, Clarity, checkout e atribuição inalterados.
 
-## Task 2: Página curta e sistema visual
+## 3. Verificação local
 
-**Acceptance criteria:**
-- [x] Hero, Raio X, formulário, produto e encerramento presentes.
-- [x] Um CTA primário por etapa e cinco capacidades do produto.
-- [x] CSS isolado e mobile-first, sem overflow.
+- [x] `npm run lint` aprovado.
+- [x] `npm run build` aprovado sem `NEXT_PUBLIC_BASE_PATH=/sistema-pos-edital`.
+- [x] Export contém as quatro rotas esperadas.
+- [x] HTML usa assets na raiz e canonicals do domínio novo.
+- [x] Teste visual desktop/mobile local aprovado.
 
-**Verification:** capturas e inspeção em quatro viewports.
+## 4. GitHub Pages e DNS
 
-**Dependencies:** Task 1.
+- [ ] Configurar custom domain `neuralconcursos.com.br` no Pages.
+- [ ] Registrar os valores DNS exigidos pela interface real.
+- [ ] Criar registros do apex no Registro.br.
+- [ ] Criar `www` conforme recomendação do GitHub.
+- [ ] Preservar registros MX/TXT e demais serviços.
+- [ ] Confirmar DNS reconhecido pelo GitHub.
 
-**Files:** `app/raio-x/page.tsx`, `app/raio-x/raio-x.module.css`.
+## 5. Deploy e HTTPS
 
-## Task 3: Descoberta e atribuição
+- [x] Revisar diff inteiro e ausência de mudanças fora de escopo.
+- [ ] Commit claro criado.
+- [ ] Push para `main` concluído.
+- [ ] GitHub Actions/Pages verde.
+- [ ] Certificado emitido.
+- [ ] Enforce HTTPS habilitado.
 
-**Acceptance criteria:**
-- [x] Metadata específica do Raio X.
-- [x] Rota adicionada ao sitemap.
-- [x] UTMs preservadas na ação externa quando configurada.
+## 6. Validação em produção
 
-**Verification:** inspecionar HTML, sitemap e submissão configurada.
+- [ ] `/` mostra apenas a página temporária da marca.
+- [ ] `/sistema-pos-edital/` preserva a landing longa e todos os assets.
+- [ ] `/raio-x-express/` preserva Raio X, formulário e assets.
+- [ ] `/raio-x/` encaminha para a rota canônica.
+- [ ] Canonicals e OG/Twitter corretos por página.
+- [ ] `robots.txt` e `sitemap.xml` corretos.
+- [ ] URLs GitHub.io antigas testadas e comportamento documentado.
+- [ ] UTM, `utm_id`, `src`, `sck` e `fbclid` chegam à Hotmart.
+- [ ] `page_view` em `/`, `/sistema-pos-edital/` e `/raio-x-express/` no GA4.
+- [ ] `checkout_click` no novo domínio no GA4.
+- [ ] Clarity recebe sessões do novo hostname.
+- [ ] Nenhuma compra realizada.
 
-**Dependencies:** Tasks 1–2.
+## 7. Handoff
 
-**Files:** `app/raio-x/page.tsx`, `app/sitemap.ts`.
-
-## Task 4: QA, publicação e regressão
-
-**Acceptance criteria:**
-- [x] Lint/build/Lighthouse aprovados.
-- [x] Formulário, teclado, contraste e responsividade validados.
-- [x] Landing longa sem alteração visual ou funcional.
-
-**Verification:** navegador local, workflow do Pages e URL pública.
-
-**Dependencies:** Tasks 1–3.
-
-**Files:** evidências e atualização deste checklist.
+- [ ] Listar somente registros DNS criados/alterados.
+- [ ] Informar custom domain e estado real do HTTPS.
+- [ ] Informar SHA, deploy e pendências reais.
+- [ ] Confirmar que Meta e MailerLite ficaram fora do escopo.

@@ -1,0 +1,73 @@
+.page {
+  min-height: 100dvh;
+  padding: clamp(28px, 6vw, 80px);
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(90deg, transparent calc(100% - 1px), rgba(18, 18, 17, 0.055) 1px),
+    var(--paper);
+  background-size: min(12.5vw, 180px) 100%;
+}
+
+.card {
+  width: min(100%, 760px);
+  min-height: 480px;
+  padding: clamp(44px, 8vw, 92px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border: 1px solid var(--line);
+  background: rgba(251, 249, 243, 0.88);
+  box-shadow: 0 34px 90px rgba(18, 18, 17, 0.1);
+}
+
+.logo {
+  width: 88px;
+  height: 88px;
+  margin-bottom: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.brand {
+  margin: 0 0 22px;
+  color: var(--red);
+  font: 800 12px/1 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.card h1 {
+  max-width: 620px;
+  font-size: clamp(52px, 8vw, 92px);
+  line-height: 0.88;
+}
+
+.links {
+  width: 100%;
+  margin-top: clamp(46px, 7vw, 72px);
+  padding-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  border-top: 1px solid var(--line);
+}
+
+.links a {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  border-bottom: 1px solid var(--ink);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 560px) {
+  .page { padding: 18px; }
+  .card { min-height: calc(100dvh - 36px); padding: 36px 26px; }
+  .logo { width: 72px; height: 72px; }
+  .links { display: grid; }
+}
