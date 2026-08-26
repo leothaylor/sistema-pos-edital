@@ -33,7 +33,7 @@ export const productConfig: ProductConfig = {
     },
     {
       title: "Professor Zoeiro Destrinchador de Questões",
-      description: "Prompt estruturado com instruções de uso para apoiar a resolução, compreensão e análise de questões. Disponível na área de membros a partir do 8º dia após a compra.",
+      description: "Comando estruturado com instruções de uso para apoiar a resolução, compreensão e análise de questões. Disponível na área de membros a partir do 8º dia após a compra.",
     },
   ],
 };
