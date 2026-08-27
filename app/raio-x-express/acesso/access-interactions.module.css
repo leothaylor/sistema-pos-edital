@@ -1,0 +1,62 @@
+.interactionScope section[aria-labelledby="como-usar-title"] article {
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.interactionScope section[aria-labelledby="como-usar-title"] article > span,
+.interactionScope section[aria-labelledby="como-usar-title"] article h3,
+.interactionScope section[aria-labelledby="como-usar-title"] article p,
+.interactionScope section[aria-labelledby="como-usar-title"] article::after {
+  transition: color 180ms ease, background 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .interactionScope section[aria-labelledby="como-usar-title"] article:hover {
+    background: #a4111b;
+  }
+
+  .interactionScope section[aria-labelledby="como-usar-title"] article:hover > span {
+    color: #f3c3c6;
+  }
+
+  .interactionScope section[aria-labelledby="como-usar-title"] article:hover h3 {
+    color: #fffdf8;
+  }
+
+  .interactionScope section[aria-labelledby="como-usar-title"] article:hover p {
+    color: #f3d9db;
+  }
+
+  .interactionScope section[aria-labelledby="como-usar-title"] article:hover::after {
+    background: #f3c3c6;
+  }
+}
+
+.interactionScope section[aria-labelledby="como-usar-title"] article:active {
+  background: #a4111b;
+}
+
+.interactionScope section[aria-labelledby="como-usar-title"] article:active > span {
+  color: #f3c3c6;
+}
+
+.interactionScope section[aria-labelledby="como-usar-title"] article:active h3 {
+  color: #fffdf8;
+}
+
+.interactionScope section[aria-labelledby="como-usar-title"] article:active p {
+  color: #f3d9db;
+}
+
+.interactionScope section[aria-labelledby="como-usar-title"] article:active::after {
+  background: #f3c3c6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactionScope section[aria-labelledby="como-usar-title"] article,
+  .interactionScope section[aria-labelledby="como-usar-title"] article > span,
+  .interactionScope section[aria-labelledby="como-usar-title"] article h3,
+  .interactionScope section[aria-labelledby="como-usar-title"] article p,
+  .interactionScope section[aria-labelledby="como-usar-title"] article::after {
+    transition: none;
+  }
+}
