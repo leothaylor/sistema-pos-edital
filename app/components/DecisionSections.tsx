@@ -25,7 +25,7 @@ const faqItems = [
     question: "E se eu não gostar?",
     answer: productConfig.guaranteeDays === null
       ? "As condições de garantia, quando aplicáveis, serão apresentadas com clareza no checkout antes da compra."
-      : `A oferta prevê ${productConfig.guaranteeDays} dias de garantia, conforme as condições apresentadas no checkout oficial.`,
+      : `Garantia de satisfação: peça reembolso integral em até ${productConfig.guaranteeDays} dias, sem perguntas.`,
   },
 ] as const;
 
@@ -96,7 +96,7 @@ export function OfferSection() {
           {price ? <p className="offer-price">{price}</p> : <p className="price-pending">O valor e as condições de acesso serão apresentados antes da abertura das inscrições.</p>}
           {confirmedConditions.length ? <ul className="confirmed-conditions">{confirmedConditions.map((item) => <li key={item}>{item}</li>)}</ul> : null}
           <CheckoutButton includePrice label="ACESSAR O SISTEMA" location="offer" />
-          <p className="safe-config"><ShieldCheck aria-hidden="true" size={18} />Você verá todas as condições de compra antes de confirmar o pedido.</p>
+          <p className="safe-config"><ShieldCheck aria-hidden="true" size={18} />Compre sem risco porque você tem 7 dias para testar.</p>
         </aside>
       </div>
     </section>
