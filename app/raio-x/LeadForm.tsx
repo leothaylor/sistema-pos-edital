@@ -30,6 +30,9 @@ export function LeadForm() {
       method="post"
       onSubmit={handleSubmit}
     >
+      <input name="ml-submit" type="hidden" value="1" />
+      <input name="anticsrf" type="hidden" value="true" />
+
       <div className={styles.field}>
         <label htmlFor="lead-name">
           Nome <span aria-hidden="true">*</span>
