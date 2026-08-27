@@ -40,7 +40,7 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_SITE_URL: https://neuralconcursos.com.br/
-          NEXT_PUBLIC_MAILERLITE_FORM_ACTION: ${{ vars.MAILERLITE_FORM_ACTION }}
+          NEXT_PUBLIC_MAILERLITE_FORM_ACTION: https://assets.mailerlite.com/jsonp/2600658/forms/196984067493725303/subscribe
 
       - name: Preparar artefato do Pages
         uses: actions/upload-pages-artifact@v3
