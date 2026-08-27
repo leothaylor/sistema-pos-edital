@@ -233,7 +233,7 @@ export default function RaioXAccessPage() {
           <div className={styles.nextGlow} aria-hidden="true" />
           <div>
             <p className={styles.eyebrow}>DEPOIS DO RAIO X</p>
-            <h2 id="next-title">A amostra mostrou o edital. O próximo passo é transformar informação em estratégia.</h2>
+            <h2 id="next-title">O Raio X revelou uma parte do seu edital. O próximo passo é transformar informação em estratégia.</h2>
             <p>
               O Sistema Pós-Edital aprofunda a leitura e organiza a preparação para você decidir o que estudar, em que ordem e com quais prioridades.
             </p>
