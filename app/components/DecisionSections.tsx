@@ -92,7 +92,7 @@ export function OfferSection() {
         </div>
 
         <aside className="offer-action" aria-label="Condições da oferta">
-          <span className="offer-status">{price ? "VALOR DE ACESSO" : "INSCRIÇÕES EM BREVE"}</span>
+          <span className="offer-status">{price ? <>DE <s>R$ 79,00</s> POR</> : "INSCRIÇÕES EM BREVE"}</span>
           {price ? <p className="offer-price">{price}</p> : <p className="price-pending">O valor e as condições de acesso serão apresentados antes da abertura das inscrições.</p>}
           {confirmedConditions.length ? <ul className="confirmed-conditions">{confirmedConditions.map((item) => <li key={item}>{item}</li>)}</ul> : null}
           <CheckoutButton includePrice label="ACESSAR O SISTEMA" location="offer" />
