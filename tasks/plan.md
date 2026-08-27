@@ -64,23 +64,23 @@ Validação visual local concluída em desktop e em viewport móvel de 390 px.
 
 ### Phase 3: Domain cutover
 
-- [ ] Task 7: Configurar `neuralconcursos.com.br` no GitHub Pages e registrar as instruções exibidas.
-- [ ] Task 8: Criar somente os registros web necessários no Registro.br, preservando MX/TXT e demais serviços.
-- [ ] Task 9: Commitar, enviar para `main` e acompanhar o deploy até ficar verde.
-- [ ] Task 10: Confirmar DNS, certificado e ativar Enforce HTTPS quando disponível.
+- [x] Task 7: Configurar `neuralconcursos.com.br` no GitHub Pages e registrar as instruções exibidas.
+- [x] Task 8: Criar somente os registros web necessários no Registro.br, preservando MX/TXT e demais serviços.
+- [x] Task 9: Commitar, enviar para `main` e acompanhar o deploy até ficar verde.
+- [x] Task 10: Confirmar DNS, certificado e ativar Enforce HTTPS quando disponível.
 
 ### Checkpoint: Domain live
 
-- [ ] Apex e `www` resolvem conforme a configuração do GitHub.
-- [ ] HTTPS funciona sem erro de certificado.
+- [x] Apex e `www` resolvem conforme a configuração do GitHub.
+- [x] HTTPS funciona sem erro de certificado.
 
 ### Phase 4: Production validation
 
-- [ ] Task 11: Validar visual, assets, interações, formulário e responsividade das três páginas.
-- [ ] Task 12: Validar canonicals, OG/Twitter, sitemap, robots e URLs antigas.
-- [ ] Task 13: Validar UTMs até Hotmart, sem concluir compra.
-- [ ] Task 14: Validar GA4 Realtime e Clarity no novo hostname.
-- [ ] Task 15: Consolidar registros alterados, SHA, evidências e pendências reais.
+- [x] Task 11: Validar visual, assets, interações, formulário e responsividade das três páginas.
+- [x] Task 12: Validar canonicals, OG/Twitter, sitemap, robots e URLs antigas.
+- [x] Task 13: Validar UTMs até Hotmart, sem concluir compra.
+- [x] Task 14: Validar GA4 Realtime e Clarity no novo hostname.
+- [x] Task 15: Consolidar registros alterados, SHA, evidências e pendências reais.
 
 ## Risks and Mitigations
 
@@ -95,4 +95,24 @@ Validação visual local concluída em desktop e em viewport móvel de 390 px.
 
 ## Open Questions
 
-- Nenhuma decisão de negócio pendente. Valores DNS e estado do HTTPS serão determinados pelas interfaces reais do GitHub Pages e Registro.br.
+- Nenhuma decisão de negócio ou pendência técnica aberta.
+
+## Valores DNS confirmados pelo GitHub
+
+- Apex A: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`.
+- Apex AAAA: `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`.
+- `www` CNAME: `leothaylor.github.io` (sem o nome do repositório).
+- Apex TXT preservado: `v=spf1 -all`.
+- O editor avançado rejeitou o Null MX literal `0 .`; para manter o domínio sem serviço de e-mail e impedir fallback SMTP aos IPs web, ele foi substituído por `MX 0 no-mail.invalid`.
+- O Registro.br confirmou “Zona DNS atualizada com sucesso”; A, AAAA, CNAME, MX e TXT foram validados nos nameservers delegados `e.sec.dns.br`/`f.sec.dns.br`.
+
+## Resultado validado
+
+- Commit funcional: `9882369ddca2455fb8f5fc571ee16934b25b7580`.
+- Workflow Pages: execução `33014192803`, build e deploy aprovados.
+- Custom domain: `neuralconcursos.com.br`; `www` redireciona para o apex.
+- Certificado GitHub Pages: `approved` para apex e `www`, válido até 2026-11-24; `https_enforced: true`.
+- Produção: raiz, produto, Raio X e compatibilidade `/raio-x/` validados; parâmetros chegam à Hotmart sem compra.
+- GA4 Realtime: títulos das três páginas presentes, `page_view` e `checkout_click` recebidos.
+- Clarity: usuário ao vivo confirmado no hostname `neuralconcursos.com.br`.
+- Fora do escopo e inalterados: Meta e MailerLite.

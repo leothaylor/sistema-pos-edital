@@ -33,40 +33,40 @@ Estados: `[x]` concluído e comprovado · `[ ]` ainda não concluído.
 
 ## 4. GitHub Pages e DNS
 
-- [ ] Configurar custom domain `neuralconcursos.com.br` no Pages.
-- [ ] Registrar os valores DNS exigidos pela interface real.
-- [ ] Criar registros do apex no Registro.br.
-- [ ] Criar `www` conforme recomendação do GitHub.
-- [ ] Preservar registros MX/TXT e demais serviços.
-- [ ] Confirmar DNS reconhecido pelo GitHub.
+- [x] Configurar custom domain `neuralconcursos.com.br` no Pages.
+- [x] Registrar os valores DNS exigidos pela interface real.
+- [x] Criar registros do apex no Registro.br.
+- [x] Criar `www` conforme recomendação do GitHub.
+- [x] Preservar registros MX/TXT e demais serviços.
+- [x] Confirmar DNS reconhecido pelo GitHub.
 
 ## 5. Deploy e HTTPS
 
 - [x] Revisar diff inteiro e ausência de mudanças fora de escopo.
-- [ ] Commit claro criado.
-- [ ] Push para `main` concluído.
-- [ ] GitHub Actions/Pages verde.
-- [ ] Certificado emitido.
-- [ ] Enforce HTTPS habilitado.
+- [x] Commit claro criado.
+- [x] Push para `main` concluído.
+- [x] GitHub Actions/Pages verde.
+- [x] Certificado emitido.
+- [x] Enforce HTTPS habilitado.
 
 ## 6. Validação em produção
 
-- [ ] `/` mostra apenas a página temporária da marca.
-- [ ] `/sistema-pos-edital/` preserva a landing longa e todos os assets.
-- [ ] `/raio-x-express/` preserva Raio X, formulário e assets.
-- [ ] `/raio-x/` encaminha para a rota canônica.
-- [ ] Canonicals e OG/Twitter corretos por página.
-- [ ] `robots.txt` e `sitemap.xml` corretos.
-- [ ] URLs GitHub.io antigas testadas e comportamento documentado.
-- [ ] UTM, `utm_id`, `src`, `sck` e `fbclid` chegam à Hotmart.
-- [ ] `page_view` em `/`, `/sistema-pos-edital/` e `/raio-x-express/` no GA4.
-- [ ] `checkout_click` no novo domínio no GA4.
-- [ ] Clarity recebe sessões do novo hostname.
-- [ ] Nenhuma compra realizada.
+- [x] `/` mostra apenas a página temporária da marca.
+- [x] `/sistema-pos-edital/` preserva a landing longa e todos os assets.
+- [x] `/raio-x-express/` preserva Raio X, formulário e assets.
+- [x] `/raio-x/` encaminha para a rota canônica.
+- [x] Canonicals e OG/Twitter corretos por página.
+- [x] `robots.txt` e `sitemap.xml` corretos.
+- [x] URLs GitHub.io antigas testadas e comportamento documentado.
+- [x] UTM, `utm_id`, `src`, `sck` e `fbclid` chegam à Hotmart.
+- [x] `page_view` em `/`, `/sistema-pos-edital/` e `/raio-x-express/` no GA4.
+- [x] `checkout_click` no novo domínio no GA4.
+- [x] Clarity recebe sessões do novo hostname.
+- [x] Nenhuma compra realizada.
 
 ## 7. Handoff
 
-- [ ] Listar somente registros DNS criados/alterados.
-- [ ] Informar custom domain e estado real do HTTPS.
-- [ ] Informar SHA, deploy e pendências reais.
-- [ ] Confirmar que Meta e MailerLite ficaram fora do escopo.
+- [x] Listar somente registros DNS criados/alterados.
+- [x] Informar custom domain e estado real do HTTPS.
+- [x] Informar SHA, deploy e pendências reais.
+- [x] Confirmar que Meta e MailerLite ficaram fora do escopo.
