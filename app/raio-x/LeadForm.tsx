@@ -8,19 +8,43 @@ import styles from "./raio-x.module.css";
 
 export function LeadForm() {
   const [status, setStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
     const form = event.currentTarget;
 
     if (!leadCaptureConfig.actionUrl) {
-      event.preventDefault();
       setStatus(
         "Os cadastros ainda não estão abertos. Seus dados continuam preenchidos; volte em breve para receber o Raio X Express e as instruções.",
       );
       return;
     }
 
-    form.action = addAttributionToUrl(leadCaptureConfig.actionUrl, window.location.href);
+    const actionUrl = addAttributionToUrl(leadCaptureConfig.actionUrl, window.location.href);
+
+    setIsSubmitting(true);
+    setStatus("Enviando seu acesso...");
+
+    try {
+      await fetch(actionUrl, {
+        method: "POST",
+        body: new FormData(form),
+        mode: "no-cors",
+      });
+
+      form.reset();
+      setStatus(
+        "Tudo certo! Seu Raio X Express foi enviado. Confira seu e-mail para acessar o vídeo, as instruções e o comando.",
+      );
+    } catch {
+      setStatus(
+        "Não foi possível concluir seu cadastro agora. Verifique sua conexão e tente novamente em instantes.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -75,8 +99,8 @@ export function LeadForm() {
         />
       </div>
 
-      <button className={styles.formButton} type="submit">
-        <span>QUERO O RAIO X EXPRESS GRÁTIS</span>
+      <button className={styles.formButton} disabled={isSubmitting} type="submit">
+        <span>{isSubmitting ? "ENVIANDO..." : "QUERO O RAIO X EXPRESS GRÁTIS"}</span>
         <ArrowRight aria-hidden="true" size={18} strokeWidth={1.8} />
       </button>
 
