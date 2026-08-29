@@ -1,6 +1,10 @@
 export const trackingConfig = {
   googleAnalyticsMeasurementId: "G-F59RLCT29B",
   microsoftClarityProjectId: "y7hzissaiv",
+  // Meta Pixel / Dataset "Neural Concursos". Purchase e InitiateCheckout sao
+  // disparados pela Hotmart (WEB + CAPI, deduplicados por event_id). O site so
+  // dispara PageView e o custom event checkout_click. Ver TrackingScripts.tsx.
+  metaPixelId: "1346754177221914",
 } as const;
 
 export const attributionKeys = [
@@ -44,6 +48,12 @@ export function sendCheckoutClick(
 
   const eventParameters = { ...parameters };
 
+  // Espelha o clique para a Meta como custom event (NAO comercial): da
+  // visibilidade de funil sem colidir com InitiateCheckout/Purchase da Hotmart.
+  if (window.fbq) {
+    window.fbq("trackCustom", "checkout_click", eventParameters);
+  }
+
   if (window.gtag) {
     window.gtag("event", "checkout_click", eventParameters);
 
@@ -63,5 +73,6 @@ declare global {
   interface Window {
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
+    fbq?: (...args: unknown[]) => void;
   }
 }
