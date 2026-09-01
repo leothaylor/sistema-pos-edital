@@ -12,76 +12,57 @@ import neuralLogo from "../../../public/logo-neural.webp";
 import { CopyPromptButton } from "./CopyPromptButton";
 import styles from "./access.module.css";
 
-const raioXPrompt = `AMOSTRA ESTRATÉGICA DO EDITAL
+const raioXPrompt = `Você é o "Detector de Riscos e Vagas em Editais" — IA especializada em auditoria rápida de editais de concursos.
 
-Analise exclusivamente o edital anexado. Não use conhecimento externo, internet, outros editais ou suposições. Se uma informação não estiver no edital, escreva "Não informado no edital."
+REGRA ABSOLUTA
+Responda APENAS com base no edital fornecido pelo usuário. Proibido: conhecimento externo, inferências ou generalizações.
+Informação ausente no edital → escreva "Não informado no edital."
+Sem edital enviado → responda: "Por favor, envie o PDF ou texto do edital para eu iniciar o rastreamento de riscos."
 
-Seu objetivo é entregar APENAS UMA AMOSTRA das informações que podem ser extraídas do edital, sem realizar a análise completa.
+SUA MISSÃO NA VERSÃO DE DIAGNÓSTICO GRATUITO
+Executar uma pré-auditoria do edital para alertar sobre requisitos e riscos de eliminação sumária.
 
-1. INFORMAÇÕES REVELADAS
+ETAPA 1 — FICHA TÉCNICA E REQUISITOS
+Extraia: Banca; Cargo(s), vagas (AC, Cotas, PCD) e Cadastro Reserva; Requisitos para posse (escolaridade, TAF, CNH, idade, conselhos); Remuneração e benefícios; Período de inscrição, taxa e isenção; Datas críticas (provas e recursos).
 
-Extraia e mostre:
-• Órgão
-• Banca
-• Cargo
-• Vagas
-• Requisito de escolaridade
-• Remuneração
-• Período de inscrição
-• Taxa
-• Data da prova
-• Etapas do concurso
-• Disciplinas cobradas
+ETAPA 2 — MAPA DE RISCO E ELIMINAÇÃO
+Classifique:
+* [ELIMINATÓRIO CRÍTICO] — Critérios de eliminação sumária (nota mínima, zerar matéria, tempo de prova, TAF, corte de redação) e como evitar.
+* [REGRAS DE IMPACTO] — Desempate, peso de títulos e critérios de classificação.
 
-2. INFORMAÇÕES ESTRATÉGICAS OCULTAS
+ETAPA 3 — ALERTAS E PEGADINHAS DO EDITAL
+Identifique: 1. Regras eliminatórias ocultas no texto; 2. Prazos curtos para laudos/documentos; 3. Regras operacionais do dia da prova.
+Para cada alerta: O que é | Onde está no edital | Risco de ignorar.
 
-Mostre apenas os títulos abaixo, mantendo a resposta como ***:
+ETAPA 4 — DIAGNÓSTICO DE VIABILIDADE
+Quadro resumo:
+* Candidato atende aos requisitos básicos?
+* Pontuação mínima obrigatória por bloco para não ser eliminado?
 
-Conteúdo programático completo: ***
-Quantidade de questões por disciplina: ***
-Peso das disciplinas: ***
-Distribuição da pontuação: ***
-Notas mínimas: ***
-Critérios de eliminação: ***
-Critérios de classificação: ***
-Critérios de desempate: ***
-Regras específicas das etapas: ***
-Prazos críticos: ***
-Exigências para posse: ***
-Regras de cotas e atendimento especializado: ***
-Alertas importantes encontrados no edital: ***
-Mapa de risco do concurso: ***
-Prioridade estratégica das disciplinas: ***
+ETAPA 5 — ANÚNCIO E CTA (OBRIGATÓRIO E INALTERÁVEL)
+Após a Etapa 4, insira EXATAMENTE o texto abaixo:
 
-Não revele os dados ocultos, mesmo que estejam claramente disponíveis no edital.
+---
+🚨 *DIAGNÓSTICO PRELIMINAR DE RISCO CONCLUÍDO!*
 
-3. O QUE A ANÁLISE COMPLETA PODE REVELAR
+Esta foi apenas uma *amostra rápida de segurança* para você não ser eliminado por bobeira. Saber o que não fazer é apenas 20% do caminho. *Agora você precisa do RAIO-X COMPLETO e do plano de ação para ser aprovado.*
 
-Apresente brevemente que uma análise aprofundada do mesmo edital pode identificar:
-• Conteúdo e subtópicos completos;
-• Pesos e distribuição das questões;
-• Notas mínimas e critérios de aprovação;
-• Regras que podem causar eliminação;
-• Prazos e exigências importantes;
-• Pontos de risco do edital;
-• Prioridade estratégica de cada disciplina;
-• Informações relevantes para montar uma estratégia de estudos.
+Na versão completa do *Raio-X do Edital*, nós vamos além da ficha técnica: destrinchamos a fundo todo o conteúdo programático, o peso estratégico de cada assunto e onde a banca vai tentar te derrubar.
 
-Não execute essas análises. Apenas indique que elas existem.
+🔥 *Ao liberar o Sistema Pós-Edital Completo, você terá acesso imediato a:*
+* *P01 — Raio-X Profundo do Edital:* Mapeamento completo do conteúdo, pesos, jurisprudência e detalhes que esta versão gratuita não cobre.
+* *P02 — Scanner de Bancas:* Armadilhas e padrões de cobrança da sua banca.
+* *P03 — Mapa Estratégico:* Tabela verticalizada com priorização 80/20 por matéria.
+* *P04 — Calculadora da Aprovação:* Plano de estudos personalizado para sua rotina.
+* *P16 — Plano de Contingência:* Estratégia de guerra para reta final.
+* *P35 — Radar de Mudanças:* Comparativo automático de retificações.
 
-4. ENCERRAMENTO
+🎁 *BÔNUS EXCLUSIVOS INCLUSOS:*
+* 🤪 *Bônus 1 — Professor Zueiro Destrinchador de Questões:* Explicações diretas, bem-humoradas e sem enrolação para destravar qualquer questão.
+* 🖥️ *Bônus 2 — Painel Neural Concursos IA (Painel de Estudos):* Software completo para Windows com métricas de horas, desempenho por banca/matéria e alertas automáticos de revisões e pontos fracos.
 
-Finalize com:
-"Esta é apenas uma amostra. O edital contém outras informações estratégicas que podem ser extraídas, organizadas e analisadas para transformar o edital em um verdadeiro mapa de preparação para o concurso."
-
-REGRAS FINAIS
-
-• Não repita informações.
-• Não invente dados.
-• Não faça inferências.
-• Não revele os campos marcados com ***.
-• Use somente informações presentes no edital.
-• Se não houver edital, responda: "Envie o edital para início da análise."`;
+👉 *Desbloqueie o Raio-X Completo e domine o edital agora:*
+https://neuralconcursos.com.br/sistema-pos-edital/`;
 
 export const metadata: Metadata = {
   title: "Acesso ao Raio X Express | Neural Concursos",
@@ -129,7 +110,7 @@ export default function RaioXAccessPage() {
             <p className={styles.eyebrow}><Sparkles aria-hidden="true" size={15} /> RAIO X EXPRESS · GRATUITO</p>
             <h1>Seu Raio X Express está <em>pronto.</em></h1>
             <p className={styles.heroLede}>
-              Assista ao passo a passo, copie o comando e use a IA para extrair uma amostra estratégica do seu próprio edital.
+              Assista ao passo a passo, copie o comando e use a IA para fazer um diagnóstico preliminar de requisitos, riscos e regras críticas do seu edital.
             </p>
             <div className={styles.flow} aria-label="Fluxo de uso do Raio X Express">
               <span>ANEXE O EDITAL</span><ArrowRight aria-hidden="true" size={16} />
@@ -205,17 +186,17 @@ export default function RaioXAccessPage() {
         <section aria-labelledby="resultado-title" className={styles.previewSection}>
           <div className={styles.previewCopy}>
             <p className={styles.eyebrow}><CheckCircle2 aria-hidden="true" size={15} /> O QUE VOCÊ VAI VER</p>
-            <h2 id="resultado-title">Uma amostra. Não a análise inteira.</h2>
+            <h2 id="resultado-title">Um diagnóstico preliminar antes da análise completa.</h2>
             <p>
-              O Raio X revela informações centrais do edital e mantém a camada estratégica avançada ocultada. Isso faz parte do próprio comando.
+              O Raio X Express gratuito faz uma pré-auditoria do edital para identificar requisitos, riscos de eliminação, alertas operacionais e sinais básicos de viabilidade.
             </p>
           </div>
           <div className={styles.resultCard} aria-label="Exemplo simplificado do formato de resultado">
-            <div><span>Órgão</span><b>informação do seu edital</b></div>
-            <div><span>Banca</span><b>informação do seu edital</b></div>
-            <div><span>Data da prova</span><b>informação do seu edital</b></div>
-            <div className={styles.hiddenResult}><span>Mapa de risco do concurso</span><b>***</b></div>
-            <div className={styles.hiddenResult}><span>Prioridade estratégica</span><b>***</b></div>
+            <div><span>Ficha técnica</span><b>dados do seu edital</b></div>
+            <div><span>Requisitos para posse</span><b>dados do seu edital</b></div>
+            <div><span>Riscos eliminatórios</span><b>alertas classificados</b></div>
+            <div><span>Prazos e pegadinhas</span><b>pontos de atenção</b></div>
+            <div><span>Viabilidade básica</span><b>diagnóstico preliminar</b></div>
           </div>
         </section>
 
